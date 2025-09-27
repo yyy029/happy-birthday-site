@@ -19,11 +19,18 @@
       text-align: center;
       color: #fff;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      animation: pop 1s ease-in-out;
+      animation: pop 1s ease-in-out, rotateText 5s linear infinite;
     }
     @keyframes pop {
       0% { transform: scale(0); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes rotateText {
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(5deg); }
+      50%  { transform: rotate(-5deg); }
+      75%  { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
     }
     .confetti {
       position: fixed;
