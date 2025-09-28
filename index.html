@@ -48,6 +48,7 @@
     /* 後で付け替えるクラス */
     .flicker {
       color: red;
+      font-size: 3rem;
       border: none;
       animation: flicker 0.1s infinite alternate;
     }
@@ -69,7 +70,7 @@
         const text = document.querySelector(".scary-text");
         text.classList.remove("scary-text");
         text.classList.add("flicker");
-      }, 5000);
+      }, 10000);
     </script>
 </body>
 </html>
