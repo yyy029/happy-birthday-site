@@ -17,7 +17,39 @@
       justify-content: center;
       flex-direction: column;
       background:#000;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    .scary-text {
+      color: white;
+      font-size: 3rem;
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid red; /* タイプカーソル風 */
+      animation: typing 3s steps(8) forwards, blink 0.5s step-end infinite;
+    }
+
+    /* タイプライター演出 */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 8ch; } /* 「家の外に来い」＝8文字 */
+    }
+
+    /* カーソル点滅 */
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* 赤文字点滅 */
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.2; }
+    }
+
+    /* 後で付け替えるクラス */
+    .flicker {
+      color: red;
+      border: none;
+      animation: flicker 0.1s infinite alternate;
     }
     h1 {
       font-size: 4rem;
@@ -26,15 +58,18 @@
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
       animation: pop 1s ease-in-out;
     }
-    @keyframes pop {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+
   </style>
 </head>
 <body>
-  <h1>
-    <p>家の外に来い</p> 
-  </h1>
+    <div class="scary-text">家の外に来い</div>
+    <script>
+    // 5秒後に赤文字点滅へ切り替え
+      setTimeout(() => {
+        const text = document.querySelector(".scary-text");
+        text.classList.remove("scary-text");
+        text.classList.add("flicker");
+      }, 5000);
+    </script>
 </body>
 </html>
