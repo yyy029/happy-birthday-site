@@ -43,6 +43,12 @@
         transform: translateY(100vh) rotate(360deg);
       }
     }
+    img {
+      margin-top: 20px;
+      width: 300px; /* 画像サイズ */
+      border-radius: 20px; /* 角を丸くする（オプション） */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 影をつけて浮き上がらせる */
+    }
   </style>
 </head>
 <body>
@@ -50,6 +56,9 @@
     <p>🎂 HAPPY BIRTHDAY 🎂</p>
     <p>家の外にきたまえ</p> 
   </h1>
+
+  <img src="images/obake.png" alt="おばけ">
+
   <script>
     // 紙吹雪をランダムに降らせる
     for (let i = 0; i < 50; i++) {
